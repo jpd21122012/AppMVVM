@@ -21,12 +21,11 @@ namespace AppMVVM.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainView : PageBase
+    public sealed partial class SecondView : PageBase
     {
-        public MainView()
+        public SecondView()
         {
             this.InitializeComponent();
-            base.SplitViewFrame = splitViewFrame;
         }
     }
 }

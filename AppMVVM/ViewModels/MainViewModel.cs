@@ -4,13 +4,14 @@ using AppMVVM.Base;
 using AppMVVM.Views;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 namespace AppMVVM.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-
         private bool _isMenuOpen;
         public bool IsMenuOpen
         {
@@ -21,18 +22,34 @@ namespace AppMVVM.ViewModels
                 RaisePropertyChanged();
             }
         }
-        private string _holamundo;
-        public string HolaMundo
+
+        private ICommand _openCloseMenuCommand;
+        public ICommand OpenCloseMenuCommand
         {
-            get
+            get { return _openCloseMenuCommand = _openCloseMenuCommand ?? new DelegateCommand(OpenCloseMenuExecute); }
+        }
+        private void OpenCloseMenuExecute()
+        {
+            IsMenuOpen = !IsMenuOpen;
+        }
+
+        private DelegateCommand<string> _navigationCommand;
+        public DelegateCommand<string> NavigationCommand
+        {
+            get { return _navigationCommand = _navigationCommand ?? new DelegateCommand<string>(NavigationExecute); }
+        }
+        private void NavigationExecute(string viewFrame)
+        {
+            switch (viewFrame)
             {
-                return _holamundo;
+                case "SecondView":
+                    SplitViewFrame.Navigate(typeof(SecondView));
+                    break;
+                case "OtherView":
+                    SplitViewFrame.Navigate(typeof(OtherView));
+                    break;
             }
-            set
-            {
-                _holamundo = value;
-                RaisePropertyChanged();
-            }
+            IsMenuOpen = false;
         }
         public override Task OnNavigateFrom(NavigationEventArgs args)
         {
@@ -41,7 +58,6 @@ namespace AppMVVM.ViewModels
 
         public override Task OnNavigateTo(NavigationEventArgs args)
         {
-            HolaMundo = "Hello World from ViewModel";
             return null;
         }
     }
