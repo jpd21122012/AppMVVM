@@ -1,17 +1,12 @@
-﻿using AppMVVM.Base;
-using System;
+﻿using System.Threading.Tasks;
+using System.Windows.Input;
+using Windows.UI.Xaml.Navigation;
 using AppMVVM.Base;
 using AppMVVM.Views;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Windows.UI;
-using Windows.UI.ViewManagement;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace AppMVVM.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class HomeViewModel: ViewModelBase
     {
         private bool _isMenuOpen;
         public bool IsMenuOpen
@@ -43,30 +38,29 @@ namespace AppMVVM.ViewModels
         {
             switch (viewFrame)
             {
-                case "Home":
-                    SplitViewFrame.Navigate(typeof(HomeViewModel));
+                case "Login":
+                    SplitViewFrame.Navigate(typeof(LoginView));
                     break;
                 case "Recognizer":
-                    SplitViewFrame.Navigate(typeof(MainPageViewModel));
+                    SplitViewFrame.Navigate(typeof(MainPageView));
                     break;
                 case "Account":
-                    SplitViewFrame.Navigate(typeof(AccountViewModel));
+                    SplitViewFrame.Navigate(typeof(AccountView));
                     break;
                 case "Exit":
                     //Method to put 0 on db
-                    SplitViewFrame.Navigate(typeof(OtherView));
+                    SplitViewFrame.Navigate(typeof(ExitView));
                     break;
             }
             IsMenuOpen = false;
         }
-        public override Task OnNavigateFrom(NavigationEventArgs args)
+        public override Task OnNavigateTo(NavigationEventArgs args)
         {
             return null;
         }
 
-        public override Task OnNavigateTo(NavigationEventArgs args)
+        public override Task OnNavigateFrom(NavigationEventArgs args)
         {
-
             return null;
         }
     }
