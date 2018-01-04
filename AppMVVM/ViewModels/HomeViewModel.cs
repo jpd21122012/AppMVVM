@@ -47,6 +47,9 @@ namespace AppMVVM.ViewModels
                 case "Account":
                     SplitViewFrame.Navigate(typeof(AccountView));
                     break;
+                case "About":
+                    SplitViewFrame.Navigate(typeof(AboutView));
+                    break;
                 case "Exit":
                     //Method to put 0 on db
                     SplitViewFrame.Navigate(typeof(ExitView));

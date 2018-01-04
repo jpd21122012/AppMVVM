@@ -10,6 +10,14 @@
     DataContext="{Binding Source={StaticResource Locator}, Path=MainPageViewModel}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="MainPageViewModel"></TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Text="MainPageViewModel"></TextBlock>
     </Grid>
 </base:PageBase>

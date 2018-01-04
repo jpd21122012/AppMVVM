@@ -19,6 +19,7 @@ namespace AppMVVM.Base
             _container.RegisterType<MainPageViewModel>();
             _container.RegisterType<AccountViewModel>();
             _container.RegisterType<ExitViewModel>();
+            _container.RegisterType<AboutViewModel>();
         }
 
         public MainViewModel MainViewModel => _container.Resolve<MainViewModel>();
@@ -29,5 +30,6 @@ namespace AppMVVM.Base
         public MainPageViewModel MainPageViewModel => _container.Resolve<MainPageViewModel>();
         public AccountViewModel AccountViewModel => _container.Resolve<AccountViewModel>();
         public ExitViewModel ExitViewModel => _container.Resolve<ExitViewModel>();
+        public AboutViewModel AboutViewModel => _container.Resolve<AboutViewModel>();
     }
 }
