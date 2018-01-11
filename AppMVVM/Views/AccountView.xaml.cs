@@ -26,6 +26,52 @@ namespace AppMVVM.Views
         public AccountView()
         {
             this.InitializeComponent();
+            AccountFrame.Navigate(typeof(MainAccountView));
+            AppBarToggleButtonAccount.IsChecked = true;
+        }
+        private void AppBarToggleButton_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            var button = (AppBarToggleButton)sender;
+            System.Diagnostics.Debug.WriteLine(button.Name);
+
+            switch (button.Name)
+            {
+                case "AppBarToggleButtonAccount":
+                    AppBarToggleButtonPrivacy.IsChecked = false;
+                    AppBarToggleButtonPayment.IsChecked = false;
+                    AppBarToggleButtonSecurity.IsChecked = false;
+                    AppBarToggleButtonSubscription.IsChecked = false;
+                    AccountFrame.Navigate(typeof(MainAccountView));
+                    break;
+                case "AppBarToggleButtonPrivacy":
+                    AppBarToggleButtonAccount.IsChecked = false;
+                    AppBarToggleButtonPayment.IsChecked = false;
+                    AppBarToggleButtonSecurity.IsChecked = false;
+                    AppBarToggleButtonSubscription.IsChecked = false;
+                    AccountFrame.Navigate(typeof(AccountPrivacyView));
+                    break;
+                case "AppBarToggleButtonSecurity":
+                    AppBarToggleButtonAccount.IsChecked = false;
+                    AppBarToggleButtonPrivacy.IsChecked = false;
+                    AppBarToggleButtonPayment.IsChecked = false;
+                    AppBarToggleButtonSubscription.IsChecked = false;
+                    AccountFrame.Navigate(typeof(AccountSecurityView));
+                    break;
+                case "AppBarToggleButtonPayment":
+                    AppBarToggleButtonAccount.IsChecked = false;
+                    AppBarToggleButtonPrivacy.IsChecked = false;
+                    AppBarToggleButtonSecurity.IsChecked = false;
+                    AppBarToggleButtonSubscription.IsChecked = false;
+                    AccountFrame.Navigate(typeof(AccountPaymentView));
+                    break;
+                case "AppBarToggleButtonSubscription":
+                    AppBarToggleButtonAccount.IsChecked = false;
+                    AppBarToggleButtonPrivacy.IsChecked = false;
+                    AppBarToggleButtonSecurity.IsChecked = false;
+                    AppBarToggleButtonPayment.IsChecked = false;
+                    AccountFrame.Navigate(typeof(AccountSubscriptionView));
+                    break;
+            }
         }
     }
 }

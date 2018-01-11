@@ -21,35 +21,35 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <CommandBar Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
-            <AppBarToggleButton Width="200">
+            <AppBarToggleButton Width="200" Name="AppBarToggleButtonAccount" Tapped="AppBarToggleButton_OnTapped">
                 <RelativePanel>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;" Foreground="Black" VerticalAlignment="Center"></FontIcon>
                     <TextBlock VerticalAlignment="Center" Margin="25,0">Account</TextBlock>
                 </RelativePanel>
             </AppBarToggleButton>
             <AppBarSeparator/>
-            <AppBarToggleButton Width="200">
+            <AppBarToggleButton Width="200" Name="AppBarToggleButtonPrivacy" Tapped="AppBarToggleButton_OnTapped">
                 <RelativePanel>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72E;" Foreground="Black" VerticalAlignment="Center"></FontIcon>
                     <TextBlock VerticalAlignment="Center" Margin="25,0">Privacy</TextBlock>
                 </RelativePanel>
             </AppBarToggleButton>
             <AppBarSeparator/>
-            <AppBarToggleButton Width="200">
+            <AppBarToggleButton Width="200" Name="AppBarToggleButtonSecurity" Tapped="AppBarToggleButton_OnTapped">
                 <RelativePanel>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8A6;" Foreground="Black" VerticalAlignment="Center"></FontIcon>
                     <TextBlock VerticalAlignment="Center" Margin="25,0">Security</TextBlock>
                 </RelativePanel>
             </AppBarToggleButton>
             <AppBarSeparator/>
-            <AppBarToggleButton Width="200">
+            <AppBarToggleButton Width="200" Name="AppBarToggleButtonPayment" Tapped="AppBarToggleButton_OnTapped">
                 <RelativePanel>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7BF;" Foreground="Black" VerticalAlignment="Center"></FontIcon>
                     <TextBlock VerticalAlignment="Center" Margin="25,0">Payment</TextBlock>
                 </RelativePanel>
             </AppBarToggleButton>
             <AppBarSeparator/>
-            <AppBarToggleButton Width="200">
+            <AppBarToggleButton Width="200" Name="AppBarToggleButtonSubscription" Tapped="AppBarToggleButton_OnTapped">
                 <RelativePanel>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xF22C;" Foreground="Black" VerticalAlignment="Center"></FontIcon>
                     <TextBlock VerticalAlignment="Center" Margin="25,0">Subscription</TextBlock>
@@ -74,5 +74,6 @@
         <TextBlock Grid.Column="1" Grid.Row="2" Margin="40,96" x:Name="tbAccountCompanyEmail" Text="slipknot_jpd@hotmail.com"></TextBlock>
         <FontIcon FontFamily="Segoe MDL2 Assets" Grid.Column="1" Grid.Row="2" Foreground="Black" Glyph="&#xE7BF;" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,133,0,0" ></FontIcon>
         <TextBlock Grid.Column="1" Grid.Row="2" Margin="40,136" x:Name="tbAccountCompanyPayment" Text="Credit Card"></TextBlock>
+        <Frame Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" x:Name="AccountFrame" Background="LightBlue" ></Frame>
     </Grid>
 </base:PageBase>

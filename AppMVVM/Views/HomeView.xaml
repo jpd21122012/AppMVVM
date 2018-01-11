@@ -147,7 +147,7 @@
                                  Command="{Binding NavigationCommand}"
                                  CommandParameter="About"
                                  Click="ButtonBase_OnClick"/>
-                    <RadioButton Style="{StaticResource HamburguerRadioButtonStyle}" IsEnabled="False"
+                    <RadioButton Style="{StaticResource HamburguerRadioButtonStyle}"
                                  Content="Sign Out"
                                  Tag="&#xEA39;"
                                  Command="{Binding NavigationCommand}"
