@@ -64,7 +64,7 @@
                                     <ColumnDefinition Width="48"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock FontSize="16" Height="16" Text="{TemplateBinding Tag}" FontFamily="Segoe MDL2 Assets" Margin="0,16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red"/>
+                                <TextBlock FontSize="16" Height="16" Text="{TemplateBinding Tag}" FontFamily="Segoe MDL2 Assets" Margin="0,16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Aqua"/>
                                 <ContentPresenter x:Name="ContentPresenter" 
                                                   FontSize="16"
                                                   AutomationProperties.AccessibilityView="Raw" 
@@ -103,19 +103,21 @@
                    CompactPaneLength="48"
                    DisplayMode="CompactOverlay">
             <SplitView.Pane>
-                <StackPanel HorizontalAlignment="Stretch"
+                <RelativePanel HorizontalAlignment="Stretch"
                             Background="Chocolate">
                     <RadioButton Style="{StaticResource HamburguerRadioButtonStyle}"
                                  Content="SecondView"
                                  Tag="&#xE8b8;"
                                  Command="{Binding NavigationCommand}"
                                  CommandParameter="SecondView" UseSystemFocusVisuals="False"/>
+
                     <RadioButton Style="{StaticResource HamburguerRadioButtonStyle}"
                                  Content="OtherView"
                                  Tag="&#xE8bb;"
                                  Command="{Binding NavigationCommand}"
-                                 CommandParameter="OtherView"/>
-                </StackPanel>
+                                 CommandParameter="OtherView"
+                                 Margin="0,75"/>
+                </RelativePanel>
             </SplitView.Pane>
             <SplitView.Content>
                 <Frame x:Name="splitViewFrame"/>
