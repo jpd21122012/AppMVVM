@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -16,7 +17,7 @@ namespace AppMVVM.Base
         private Frame _appFrame;
         public Frame AppFrame => _appFrame;
         private Frame _splitViewFrame;
-        public Frame SplitViewFrame => _splitViewFrame; 
+        public Frame SplitViewFrame => _splitViewFrame;
 
         public abstract Task OnNavigateTo(NavigationEventArgs args);
         public abstract Task OnNavigateFrom(NavigationEventArgs args);
@@ -29,5 +30,6 @@ namespace AppMVVM.Base
         {
             _splitViewFrame = viewFrame;
         }
+
     }
 }
